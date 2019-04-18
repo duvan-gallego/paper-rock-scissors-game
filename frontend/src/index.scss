@@ -1,0 +1,20 @@
+@import 'globals';
+
+@include react-md-everything;
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.global {
+
+  &__empty_page {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+}

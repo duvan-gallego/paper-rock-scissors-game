@@ -1,0 +1,15 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveForeground": "#000000CC",
+    "titleBar.activeBackground": "#3765e4cc",
+    "titleBar.inactiveBackground": "#3765e4cc"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "prettier.singleQuote": true
+}

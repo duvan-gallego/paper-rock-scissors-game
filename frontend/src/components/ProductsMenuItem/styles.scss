@@ -1,0 +1,45 @@
+@import '../../globals';
+
+.productsMenuItem {
+  text-decoration: none;
+  color: $neutral-black;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  padding-left: 10px;
+  display: flex;
+
+    &__icon {
+      border-radius: 50%;
+      background: $gray-8;
+      color: $neutral-wite;
+      height: 40px;
+      width: 40px;
+      margin-top: 5px;
+      text-align: center;
+
+      &--image {
+        color: $neutral-wite;
+      }
+    }
+
+    &__text {
+      margin-left: 20px;
+    }
+
+    &--active {
+      background: $gray-2;
+    }
+
+  &:hover {
+    background: $gray-2;
+    cursor: pointer;
+  }
+}
+
+
+@include onTablet {
+  .productsMenuItem__text {
+    display: none;
+  }
+}

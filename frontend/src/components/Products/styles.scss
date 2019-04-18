@@ -1,0 +1,54 @@
+@import '../../globals';
+
+.products {
+  padding: 0;
+  display: flex;
+
+  &__menu {
+    height: calc(100vh - 50px);
+    width: 25%;
+    background: $neutral-wite;
+    position: fixed;
+    top: 50px;
+    border-right: 1px solid $gray-1;
+
+    &_title {
+      color: $gray-7;
+      padding-top: 10px;
+      padding-left: 10px;
+      height: 50px;
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__separator {
+    background-color: $gray-1;
+    height: 1px;
+    border: 0;
+  }
+
+  &__products_list {
+    background: $light-wite;
+    width: 75%;
+    float: right;
+    margin-top: 50px;
+  }
+
+}
+
+@include onTablet {
+  .products {
+
+    &__menu {
+      width: 60px;
+      &_title {
+        display: none;
+      }
+    }
+
+    &__products_list {
+      width: calc(100% - 60px);
+    }
+  }
+}

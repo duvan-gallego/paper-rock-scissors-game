@@ -1,0 +1,51 @@
+@import '../../globals';
+
+.productsList {
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  &__rows_view {
+    margin-top: 20px;
+  }
+
+  &__icon {
+    margin-right: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__search {
+    margin-bottom: 0;
+  }
+
+  &__error {
+    text-align: center;
+    color: red;
+    margin-top: 50px;
+  }
+
+  &__loading {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+}
+
+@include onTablet {
+  .productsList__rows_view {
+    display: none;
+  }
+}

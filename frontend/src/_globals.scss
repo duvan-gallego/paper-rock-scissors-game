@@ -1,0 +1,46 @@
+@import 'node_modules/react-md/src/scss/react-md';
+
+$md-primary-color: $md-grey-500;
+$md-secondary-color: $md-grey-300;
+
+// Vars
+
+$gray-1: #DCDCDC;
+$gray-2: #E0E0E0;
+$gray-3: #c8c8c8;
+$gray-4: #D3D3D3;
+$gray-5: #AFAFAF;
+$gray-6: #8C8C8C;
+$gray-7: #8E8E8E;
+$gray-8: #616161;
+
+$neutral-black: #000;
+$neutral-wite:#FFFFFF;
+$light-wite:#FAFAFA;
+
+// Mixin to use a standar media query for small screen
+@mixin onSmallScreen {
+  @media only screen and (max-width: 1224px) {
+    @content;
+  }
+}
+
+// Mixin to use a standar media query for tablets
+@mixin onTablet {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Mixin to use a standar media query for tablets in portrait
+@mixin onTabletPortrait {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
+// Mixin to use a standar media query for cellphones
+@mixin onCellPhone {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
