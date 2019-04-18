@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* POST game */
 router.post('/', function(req, res) {
-  let error = false;
+
+  console.log('*****************');
+  console.log(req.body);
+
+  /*let error = false;
   let fieldWithError = '';
   if(!req.body.firstName) {
     error = true;
@@ -25,17 +29,12 @@ router.post('/', function(req, res) {
       success: 'false',
       message: `${fieldWithError} is required`
     });
-  }
+  }*/
 
-  console.log('************************************************************');
-  console.log('CONTACT INFORMATION');
-  console.log('************************************************************');
-  console.log(req.body);
-  console.log('************************************************************');
 
   return res.status(200).send({
     success: 'true',
-    message: 'Contact info sent successfully'
+    message: 'Game created successfully'
   })
 });
 
