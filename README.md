@@ -1,6 +1,6 @@
 
 ## Paper, Rock, Scissors game
-This is just a Paper, Rock and Scissors game, with react, hooks, node and mongodb
+This is just a Paper, Rock and Scissors game, with react, redux, hooks, node and mongodb
 
 In the project directory, you can run:
 ### `npm install`

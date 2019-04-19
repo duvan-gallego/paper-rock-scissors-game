@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 
-// import products from '../containers/ProductsList/redux';
-
+import game from '../containers/Home/redux';
 
 const rootReducer = combineReducers({
-  // products
+  game
 });
 
 export default rootReducer;

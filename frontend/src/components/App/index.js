@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 //import Appnavbar from '../AppNavbar';
 
 // Import pages
-import Home from '../Home';
+import Home from '../../containers/Home';
 import Error404 from '../Error404';
 
 const ReduxStoreInstance = ReduxStore();
