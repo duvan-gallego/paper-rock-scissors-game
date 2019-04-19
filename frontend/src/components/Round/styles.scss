@@ -1,0 +1,22 @@
+@import '../../globals';
+
+.round {
+
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: $red;
+  }
+
+  &__playerName {
+    text-align: center;
+    font-size: 30px;
+    color: $gray1;
+    text-transform: capitalize;
+    margin: 30px  0 15px 0;
+  }
+
+
+}

@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Round from '../../components/Round'
+
 import './styles.scss';
 
 const Playing = () => (
-  <div>
-    playing page
+  <div className='playing'>
+    <Round />
   </div>
 )
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import WebFontLoader from 'webfontloader';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 
