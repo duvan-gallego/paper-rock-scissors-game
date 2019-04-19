@@ -2,11 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-/*const onChangeHandler = (event) => {
-  console.log(event.target.name);
-  console.log(event.target.value);
-} */
-
 const InputText = ({ name, placeholder, onChange }) => (
   <input
     type='text'
@@ -16,10 +11,6 @@ const InputText = ({ name, placeholder, onChange }) => (
     onChange={onChange}
   />
 );
-
-/*InputText.defaultProps = {
-  name: 'inputText'
-}*/
 
 InputText.propTypes = {
   placeholder: PropTypes.string,

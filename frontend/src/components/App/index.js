@@ -3,9 +3,6 @@ import { Provider } from 'react-redux';
 import ReduxStore  from './../../store';
 import { Route, Switch } from 'react-router-dom';
 
-// Import NavBar
-//import Appnavbar from '../AppNavbar';
-
 // Import pages
 import Home from '../../containers/Home';
 import Error404 from '../Error404';
