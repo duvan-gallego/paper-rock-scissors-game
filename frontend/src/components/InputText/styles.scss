@@ -1,0 +1,18 @@
+@import '../../globals';
+
+.inputText {
+  border: 0;
+  border-bottom: 2px solid $blue1;
+  font-size: 30px;
+  line-height: 35px;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+  color: $gray1;
+  margin: 15px 10px 10px 10px;
+
+  &:focus {
+    outline: 0;
+  }
+}

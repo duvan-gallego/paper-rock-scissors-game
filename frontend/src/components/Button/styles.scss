@@ -1,0 +1,25 @@
+@import '../../globals';
+
+.button {
+  text-align: center;
+  display: inline-block;
+  margin:5px;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 8px 5px 8px 10px ;
+  background-color: $gray2;
+  color: $neutral-black;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 .2em $gray1;
+  cursor: pointer;
+  width: 100%;
+
+  &:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+  }
+}
