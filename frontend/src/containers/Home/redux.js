@@ -5,8 +5,8 @@ import {
 } from './constants';
 
 const initialState = {
-  player1: '',
-  player2: '',
+  player1: {},
+  player2: {},
   rounds: [],
   isFetching: false,
   errorMsg: '',

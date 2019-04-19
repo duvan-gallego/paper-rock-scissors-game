@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '../../components/Button';
@@ -19,6 +20,7 @@ const Home = (props) => {
       console.log(player1);
       console.log(player2);
       initGameAction({ player1, player2});
+
     } else {
       alert('Error: You must enter the two names of the players and they must have less than 100 characters');
     }
