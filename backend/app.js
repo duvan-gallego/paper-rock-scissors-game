@@ -17,7 +17,9 @@ const dbRoute = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSW
 // connects our back end code with the database
 mongoose.connect(
   dbRoute,
-  { useNewUrlParser: true }
+  { useNewUrlParser: true,
+    useCreateIndex: true
+  }
 );
 
 let db = mongoose.connection;
