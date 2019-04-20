@@ -1,0 +1,23 @@
+{
+  "1": {
+    "_id" : "5cbadd9a542aee699745fa1d",
+    "name": "Rock",
+    "beats": [
+      "5cbade52542aee6997467bb1"
+    ]
+  },
+  "2": {
+    "_id": "5cbade10542aee6997464bf4",
+    "name": "Paper",
+    "beats": [
+      "5cbadd9a542aee699745fa1d"
+    ]
+  },
+  "3": {
+    "_id": "5cbade52542aee6997467bb1",
+    "name": "Scissors",
+    "beats": [
+      "5cbade10542aee6997464bf4"
+    ]
+  }
+}

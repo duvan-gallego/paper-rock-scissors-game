@@ -5,9 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const movesControler = require('./controllers/move.controller');
+const movesToPreload = require('./data/moves.json');
 
 var indexRouter = require('./routes/index');
 var gamesRouter = require('./routes/games');
+var movesRouter = require('./routes/moves');
 var base = '/api';
 
 var app = express();
@@ -23,7 +26,22 @@ mongoose.connect(
 );
 
 let db = mongoose.connection;
-db.once("open", () => console.log("Connected to the database.."));
+db.once("open", () => {
+  console.log("Connected to the database..");
+  db.dropCollection("moves", function (err) {
+    if (err) {
+      console.log("Error deleting moves collection");
+    } else {
+      console.log("Moves collection deleted successful");
+      // Create the default moves
+      for (let i in movesToPreload) {
+        movesControler.createMovement(movesToPreload[i]);
+      }
+      console.log("Moves recreated successful");
+
+    }
+  });
+});
 
 // checks if connection with the database is successful
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -59,6 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(base + '/', indexRouter);
 app.use(base + '/games', gamesRouter);
+app.use(base + '/moves', movesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

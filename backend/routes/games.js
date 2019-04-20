@@ -37,7 +37,7 @@ router.post('/', async function(req, res, next) {
     success: 'true',
     message: 'Game created successfully',
     game,
-  })
+  });
 
 });
 
