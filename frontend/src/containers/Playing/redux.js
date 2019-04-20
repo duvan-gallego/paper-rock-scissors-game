@@ -5,7 +5,6 @@ import {
   GET_GAME_MOVES,
   GET_GAME_MOVES_SUCCESS,
   GET_GAME_MOVES_ERROR,
-  START_ROUND,
   CHOOSE_OPTION,
 } from './constants';
 
@@ -60,11 +59,6 @@ export default( state = initialState, action ) => {
       ...state,
       errorMsg: payload,
       isFetching: false,
-    };
-  case START_ROUND:
-    return {
-      ...state,
-      rounds: [...state.rounds, { roundNumber : payload }]
     };
   case CHOOSE_OPTION:
     return {

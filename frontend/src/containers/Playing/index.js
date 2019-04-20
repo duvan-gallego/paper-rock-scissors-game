@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Round from '../../components/Round';
 import Score from '../../components/Score';
-import { getGameMoves, chooseOption } from './actions';
+import { getGameMoves, chooseOption, getWinner } from './actions';
 
 import './styles.scss';
 
@@ -14,6 +14,7 @@ const Playing = (props) => {
   const {
     getGameMoves: getGameMovesAction,
     chooseOption: chooseOptionAction,
+    getWinner: getWinnerAction,
     game
   } = props;
 
@@ -40,6 +41,9 @@ const Playing = (props) => {
   const onClickInOk = () => {
     if (optionSelected) {
       chooseOptionAction(optionSelected, round, firstPlayer);
+      if (!firstPlayer) {
+        getWinnerAction(game._id, game.rounds[round - 1].player1Option, game.rounds[round - 1].player2Option);
+      }
     } else {
       alert('You must choose an option');
     }
@@ -57,15 +61,14 @@ const Playing = (props) => {
               onSelectOption={onSelectOption}
               onClickInOk={onClickInOk}
             />
-            <Score />
+            {round !== 1 &&
+              <Score rounds={game.rounds} />
+            }
           </>
         ) : (
           <Redirect to='/' />
         )
       }
-
-
-
     </div>
   )
 }
@@ -77,5 +80,10 @@ Playing.propTypes = {
 };
 
 const mapStateToProps = ({ game }) => ({ game });
+const actions = {
+  getGameMoves,
+  chooseOption,
+  getWinner,
+};
 
-export default connect(mapStateToProps, { getGameMoves, chooseOption })(Playing);;
+export default connect(mapStateToProps, actions)(Playing);;

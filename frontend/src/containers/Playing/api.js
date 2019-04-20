@@ -10,6 +10,16 @@ export const initGameApi = (payload) => (
     .catch(errorHandler)
 );
 
+export const getWinnerApi = (payload) => (
+  apiInstance({
+    url: '/games',
+    method: 'put',
+    data: payload,
+  })
+    .then(({ data: result }) => result)
+    .catch(errorHandler)
+);
+
 export const getGameMovesApi = () => (
   apiInstance({
     url: '/moves',
@@ -18,3 +28,4 @@ export const getGameMovesApi = () => (
     .then(({ data: result }) => result)
     .catch(errorHandler)
 );
+

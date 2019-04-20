@@ -5,10 +5,17 @@ import {
   INIT_GAME_ERROR,
   GET_GAME_MOVES,
   GET_GAME_MOVES_SUCCESS,
-  GET_GAME_MOVES_ERROR
+  GET_GAME_MOVES_ERROR,
+  GET_WINNER,
+  GET_WINNER_SUCCESS,
+  GET_WINNER_ERROR
 } from './constants';
 
-import { initGameApi, getGameMovesApi} from './api';
+import {
+  initGameApi,
+  getGameMovesApi,
+  getWinnerApi,
+} from './api';
 
 function* gameWorker(payload) {
   try {
@@ -28,10 +35,23 @@ function* getGameMovesWorker() {
   }
 }
 
+function* getWinnerWorker(payload) {
+  try {
+    const data = yield call(getWinnerApi, payload.payload);
+    yield put({ type: GET_WINNER_SUCCESS, payload: data.moves });
+  } catch (e) {
+    yield put({ type: GET_WINNER_ERROR, payload: e });
+  }
+}
+
 export function* gameWatcher() {
   yield takeLatest(INIT_GAME, gameWorker);
 }
 
 export function* getGameMovesWatcher() {
   yield takeLatest(GET_GAME_MOVES, getGameMovesWorker);
+}
+
+export function* getWinnerWatcher() {
+  yield takeLatest(GET_WINNER, getWinnerWorker);
 }

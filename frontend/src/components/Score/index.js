@@ -14,10 +14,10 @@ const Score = ({ rounds }) => (
         </tr>
       </thead>
       <tbody className='score__table-body'>
-        {rounds.map(round => (
-          <tr key={round.roundNumber}>
-            <td>{round.roundNumber}</td>
-            <td>{round.winner}</td>
+        {rounds.map((round, i) => (
+          <tr key={i + 1}>
+            <td>{i + 1}</td>
+            <td>{round.winner || '-'}</td>
           </tr>
           ))
         }
@@ -25,19 +25,6 @@ const Score = ({ rounds }) => (
     </table>
   </div>
 );
-
-Score.defaultProps = {
-  rounds: [
-    {
-      roundNumber: 1,
-      winner: 'Juan'
-    },
-    {
-      roundNumber: 2,
-      winner: 'Pedro'
-    }
-  ]
-}
 
 Score.propTypes = {
   rounds: PropTypes.array,
