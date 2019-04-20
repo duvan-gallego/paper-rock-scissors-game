@@ -89,7 +89,7 @@ router.put('/', async function(req, res, next) {
       }
     );
 
-    const totalWinnerByPlayer = game.rounds.filter(round => round.winner.toString() == winner);
+    const totalWinnerByPlayer = game.rounds.filter(round => round.winner && round.winner.toString() == winner);
     if (totalWinnerByPlayer.length >= 2) {
       // The winner is the winner of all the game
       game.winner = winner;
@@ -104,7 +104,6 @@ router.put('/', async function(req, res, next) {
   } catch(err) {
     next(err);
   }
-
 
 });
 

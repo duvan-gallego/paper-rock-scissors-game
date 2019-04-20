@@ -33,13 +33,12 @@ db.once("open", () => {
       console.log("Error deleting moves collection, moves don't exist");
     } else {
       console.log("Moves collection deleted successful");
-      // Create the default moves
-      for (let i in movesToPreload) {
-        movesControler.createMovement(movesToPreload[i]);
-      }
-      console.log("Moves recreated successful");
-
     }
+    // Create the default moves
+    for (let i in movesToPreload) {
+      movesControler.createMovement(movesToPreload[i]);
+    }
+    console.log("Moves recreated successful");
   });
 });
 
@@ -61,6 +60,12 @@ app.post('/*',function(req,res,next){
 
 // global controller for get request
 app.get('/*',function(req,res,next){
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+// global controller for put request
+app.put('/*',function(req,res,next){
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
