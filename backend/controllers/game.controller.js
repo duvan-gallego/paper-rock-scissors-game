@@ -10,3 +10,11 @@ exports.createGame = async (player1, player2) => {
   );
   return game.save();
 }
+
+exports.getGame = (gameId) => {
+  return Game.findOne({ '_id': gameId});
+};
+
+exports.updateGame = (game) => {
+  return Game.findOneAndUpdate({ '_id': game._id }, game,  {new: true}).populate({ path: 'rounds.winner', model: 'Player'}).populate({ path: 'winner', model: 'Player'});
+};

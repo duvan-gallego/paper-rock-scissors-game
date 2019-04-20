@@ -29,12 +29,14 @@ let GameSchema = new Schema({
         type: Number,
         required: true,
       },
-      player1Selection: {
-        type: String,
+      player1Option: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Moves',
         required: true,
       },
-      player2Selection: {
-        type: String,
+      player2Option: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Moves',
         required: true,
       },
       winner: {

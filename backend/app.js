@@ -30,7 +30,7 @@ db.once("open", () => {
   console.log("Connected to the database..");
   db.dropCollection("moves", function (err) {
     if (err) {
-      console.log("Error deleting moves collection");
+      console.log("Error deleting moves collection, moves don't exist");
     } else {
       console.log("Moves collection deleted successful");
       // Create the default moves
