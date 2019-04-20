@@ -1,6 +1,8 @@
 
 ## Paper, Rock, Scissors game
-This is just a Paper, Rock and Scissors game, with react, redux, hooks, node and mongodb
+This is just a Paper, Rock and Scissors game, with react, redux, hooks, node and mongodb.
+
+### Before starting the project, you must rename the file .env.example that is inside the folder backend to .env and add the information of your mongo server there.
 
 In the project directory, you can run:
 ### `npm install`
