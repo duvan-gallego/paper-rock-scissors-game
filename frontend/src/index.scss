@@ -6,6 +6,13 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto;
+}
+
+h1 {
+  text-align: center;
+  color: $red;
+  font-size: 50px;
 }
 
 .global {

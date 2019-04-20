@@ -6,12 +6,12 @@ import Select from '../../components/Select';
 import './styles.scss';
 
 const onChangeHandler = (e) => {
-  console.log(e);
+  console.log(e.target.value);
 }
 
 const Round = ({ roundNumber, playerName, gameOptions }) => (
   <div className='round'>
-    <h1 className='round__title'>Round { roundNumber }</h1>
+    <h1>Round { roundNumber }</h1>
     <h2 className='round__playerName'>{ playerName }</h2>
     <Select options={gameOptions} onChange={onChangeHandler} />
     <Button text='Ok' />

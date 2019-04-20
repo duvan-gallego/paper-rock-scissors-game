@@ -3,7 +3,7 @@
 .button {
   text-align: center;
   display: inline-block;
-  margin:5px;
+  margin: 15px 5px 5px 5px;
   font-weight: bold;
   font-size: 25px;
   padding: 8px 5px 8px 10px ;
@@ -15,7 +15,7 @@
   border-radius: 7px;
   box-shadow: 0 .2em $gray1;
   cursor: pointer;
-  width: 96%;
+  width: 480px;
 
   &:active {
     box-shadow: none;

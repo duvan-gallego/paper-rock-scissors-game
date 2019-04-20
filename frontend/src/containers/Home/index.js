@@ -13,6 +13,7 @@ const Home = (props) => {
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const { initGame: initGameAction, game } = props;
+  const playing = game && game.player1 && game.player2 && game.player1._id && game.player2._id;
 
   const starHandler = () => {
     if (player1 && player2 && player1.length <= MAX_CHARACTERS &&  player2.length <= MAX_CHARACTERS) {
@@ -25,7 +26,7 @@ const Home = (props) => {
   return (
     <>
       {
-        game
+        playing
         ? (
           <Redirect to='/playing' />
       ) : (

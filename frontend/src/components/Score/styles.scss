@@ -1,0 +1,36 @@
+@import '../../globals';
+
+.score {
+  margin-left: 140px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__table {
+    width: 250px;
+    margin: auto;
+
+    &-header {
+      font-size: 30px;
+      color: $gray1;
+    }
+
+    &-body {
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+}
+
+@include onSmallScreen {
+  .score {
+    margin-left: 80px;
+  }
+}
+
+@include onTablet {
+  .score {
+    margin-left: 40px;
+  }
+}
