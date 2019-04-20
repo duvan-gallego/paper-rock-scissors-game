@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Button from '../../components/Button';
-import InputText from '../../components/InputText';
-import initGame from './actions';
+import Button from '../Button';
+import InputText from '../InputText';
+import initGame from '../../containers/Playing/actions';
 
 import './styles.scss';
 const MAX_CHARACTERS = 100;
@@ -37,6 +37,7 @@ const Home = (props) => {
             <InputText name='player2' placeholder='Player 2' onChange={e => setPlayer2(e.target.value)} />
             <Button text='Start' onClick={starHandler} />
           </form>
+          <Link className='home__statistics' to='/statistics'>Statistics page</Link>
         </div>
       )
       }

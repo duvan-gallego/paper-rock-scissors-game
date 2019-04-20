@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects'
 
-import homeSaga from '../containers/Home/sagas';
+import playingSaga from '../containers/Playing/sagas';
 
 export default function* Sagas() {
   yield all([
-    homeSaga(),
+    playingSaga(),
   ])
 }

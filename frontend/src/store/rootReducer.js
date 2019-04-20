@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import game from '../containers/Home/redux';
+import game from '../containers/Playing/redux';
 
 const rootReducer = combineReducers({
   game

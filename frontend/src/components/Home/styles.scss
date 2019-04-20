@@ -12,4 +12,12 @@
   &__title {
     margin-bottom: 30px;
   }
+
+  &__statistics {
+    text-decoration: none;
+    color: $blue1;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+  }
 }
