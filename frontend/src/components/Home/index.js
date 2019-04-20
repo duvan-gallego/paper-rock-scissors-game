@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import InputText from '../InputText';
-import initGame from '../../containers/Playing/actions';
+import { initGame } from '../../containers/Playing/actions';
 
 import './styles.scss';
 const MAX_CHARACTERS = 100;

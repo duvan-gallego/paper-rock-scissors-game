@@ -1,6 +1,6 @@
 import { apiInstance, errorHandler } from '../../api';
 
-const initGameApi = (payload) => (
+export const initGameApi = (payload) => (
   apiInstance({
     url: '/games',
     method: 'post',
@@ -10,4 +10,11 @@ const initGameApi = (payload) => (
     .catch(errorHandler)
 );
 
-export default initGameApi;
+export const getGameMovesApi = () => (
+  apiInstance({
+    url: '/moves',
+    method: 'get'
+  })
+    .then(({ data: result }) => result)
+    .catch(errorHandler)
+);

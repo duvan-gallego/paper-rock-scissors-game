@@ -15,7 +15,7 @@ const Score = ({ rounds }) => (
       </thead>
       <tbody className='score__table-body'>
         {rounds.map(round => (
-          <tr>
+          <tr key={round.roundNumber}>
             <td>{round.roundNumber}</td>
             <td>{round.winner}</td>
           </tr>

@@ -1,9 +1,10 @@
 import { all } from 'redux-saga/effects'
 
-import playingSaga from '../containers/Playing/sagas';
+import { gameWatcher, getGameMovesWatcher } from '../containers/Playing/sagas';
 
 export default function* Sagas() {
   yield all([
-    playingSaga(),
+    gameWatcher(),
+    getGameMovesWatcher(),
   ])
 }

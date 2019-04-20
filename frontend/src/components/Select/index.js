@@ -5,9 +5,9 @@ import './styles.scss';
 
 const Select = ({ options, onChange }) => (
   <select className='select' onChange={onChange}>
-    <option value={null}>Select Move...</option>
+    <option value=''>Select Move...</option>
     {options.map(option =>
-        <option key={option.id} value={option.id}>{option.name}</option>
+        <option key={option._id} value={option._id}>{option.name}</option>
       )
     }
   </select>

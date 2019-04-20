@@ -5,42 +5,26 @@ import Button from '../../components/Button';
 import Select from '../../components/Select';
 import './styles.scss';
 
-const onChangeHandler = (e) => {
-  console.log(e.target.value);
-}
-
-const Round = ({ roundNumber, playerName, gameOptions }) => (
+const Round = ({ roundNumber, playerName, gameOptions, onSelectOption, onClickHandler }) => (
   <div className='round'>
     <h1>Round { roundNumber }</h1>
     <h2 className='round__playerName'>{ playerName }</h2>
-    <Select options={gameOptions} onChange={onChangeHandler} />
-    <Button text='Ok' />
+    <Select options={gameOptions} onChange={onSelectOption} />
+    <Button text='Ok' onClick={onClickHandler} />
   </div>
 );
 
 Round.defaultProps = {
   roundNumber:  0,
-  playerName: 'Duvan',
-  gameOptions: [
-    {
-      id: '1',
-      name: 'Rock1'
-    },
-    {
-      id: '2',
-      name: 'Rock2'
-    },
-    {
-      id: '3',
-      name: 'Rock3'
-    }
-  ]
+  playerName: 'Player Name...',
+  gameOptions: [ ]
 }
 
 Round.propTypes = {
   roundNumber: PropTypes.number.isRequired,
   playerName: PropTypes.string.isRequired,
-
+  onSelectOption: PropTypes.func.isRequired,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export default Round;
