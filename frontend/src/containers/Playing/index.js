@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import Round from '../../components/Round';
 import Score from '../../components/Score';
 import { getGameMoves, chooseOption } from './actions';
@@ -32,12 +33,11 @@ const Playing = (props) => {
     }
   }, []);
 
-  const onSelectOption = (e) => {
-    setOption(e.target.value);
+  const onSelectOption = (option) => {
+    setOption(option);
   }
 
-  const onClickHandler = () => {
-
+  const onClickInOk = () => {
     if (optionSelected) {
       chooseOptionAction(optionSelected, round, firstPlayer);
     } else {
@@ -47,14 +47,25 @@ const Playing = (props) => {
 
   return (
     <div className='playing'>
-      <Round
-        roundNumber={round}
-        playerName={actualPlayer.name}
-        gameOptions={game.moves}
-        onSelectOption={onSelectOption}
-        onClickHandler={onClickHandler}
-      />
-      <Score />
+      {game && game.player1 &&  game.player2 && game.player1._id && game.player2._id
+        ? (
+          <>
+            <Round
+              roundNumber={round}
+              playerName={actualPlayer.name}
+              gameOptions={game.moves}
+              onSelectOption={onSelectOption}
+              onClickInOk={onClickInOk}
+            />
+            <Score />
+          </>
+        ) : (
+          <Redirect to='/' />
+        )
+      }
+
+
+
     </div>
   )
 }
