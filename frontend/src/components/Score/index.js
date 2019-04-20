@@ -17,7 +17,7 @@ const Score = ({ rounds }) => (
         {rounds.map((round, i) => (
           <tr key={i + 1}>
             <td>{i + 1}</td>
-            <td>{round.winner || '-'}</td>
+            <td>{round.winner ? round.winner.name : '-'}</td>
           </tr>
           ))
         }

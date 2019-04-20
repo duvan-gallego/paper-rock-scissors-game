@@ -9,6 +9,13 @@
   &__title {
     margin-bottom: 30px;
   }
+
+  &__winner_message {
+    color: $blue1;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 40px,
+  }
 }
 
 

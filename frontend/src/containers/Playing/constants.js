@@ -11,3 +11,5 @@ export const CHOOSE_OPTION = 'CHOOSE_OPTION';
 export const GET_WINNER = 'GET_WINNER';
 export const GET_WINNER_SUCCESS = 'GET_WINNER_SUCCESS';
 export const GET_WINNER_ERROR = 'GET_WINNER_ERROR';
+
+export const RESET_GAME = 'RESET_GAME';

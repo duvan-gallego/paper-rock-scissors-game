@@ -4,7 +4,13 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Round from '../../components/Round';
 import Score from '../../components/Score';
-import { getGameMoves, chooseOption, getWinner } from './actions';
+import Button from '../../components/Button';
+import {
+  getGameMoves,
+  chooseOption,
+  getWinner,
+  resetGame,
+} from './actions';
 
 import './styles.scss';
 
@@ -15,6 +21,7 @@ const Playing = (props) => {
     getGameMoves: getGameMovesAction,
     chooseOption: chooseOptionAction,
     getWinner: getWinnerAction,
+    resetGame: resetGameAction,
     game
   } = props;
 
@@ -49,9 +56,13 @@ const Playing = (props) => {
     }
   }
 
+  const starGame = () => {
+    resetGameAction();
+  }
+
   return (
     <div className='playing'>
-      {game && game.player1 &&  game.player2 && game.player1._id && game.player2._id
+      {game && game.player1 &&  game.player2 && game.player1._id && game.player2._id && !game.winner
         ? (
           <>
             <Round
@@ -66,7 +77,17 @@ const Playing = (props) => {
             }
           </>
         ) : (
-          <Redirect to='/' />
+          <>
+            {game.winner
+              ? (
+                <div>
+                  <h1>We have a WINNER!!</h1>
+                  <div className='playing__winner_message'>{game.winner.name} is the new EMPEROR!</div>
+                  <Button text='Play Again' onClick={starGame} />
+                </div>
+              ) : (<Redirect to='/' />)
+            }
+          </>
         )
       }
     </div>
@@ -84,6 +105,7 @@ const actions = {
   getGameMoves,
   chooseOption,
   getWinner,
+  resetGame,
 };
 
 export default connect(mapStateToProps, actions)(Playing);;

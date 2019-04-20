@@ -3,6 +3,7 @@ import {
   GET_GAME_MOVES,
   CHOOSE_OPTION,
   GET_WINNER,
+  RESET_GAME,
 } from './constants';
 
 export const initGame = (players) =>  ({
@@ -30,4 +31,8 @@ export const getWinner = (gameId, player1Option, player2Option) => ({
     player1Option,
     player2Option,
   }
+});
+
+export const resetGame = () => ({
+  type: RESET_GAME,
 });

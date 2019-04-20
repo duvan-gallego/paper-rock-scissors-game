@@ -6,6 +6,10 @@ import {
   GET_GAME_MOVES_SUCCESS,
   GET_GAME_MOVES_ERROR,
   CHOOSE_OPTION,
+  GET_WINNER,
+  GET_WINNER_SUCCESS,
+  GET_WINNER_ERROR,
+  RESET_GAME,
 } from './constants';
 
 const initialState = {
@@ -15,6 +19,7 @@ const initialState = {
   moves: [],
   isFetching: false,
   errorMsg: '',
+  winner: null
 }
 
 const updateRound = (rounds, payload) => {
@@ -66,6 +71,28 @@ export default( state = initialState, action ) => {
       rounds: payload.firstPlayer
         ? [...state.rounds, { 'player1Option' : payload.optionSelected }]
         : updateRound(state.rounds, payload)
+    };
+  case GET_WINNER:
+    return {
+      ...state,
+      isFetching: true,
+    };
+  case GET_WINNER_SUCCESS:
+    return {
+      ...state,
+      rounds: [...payload.rounds],
+      winner: payload.winner && payload.winner,
+      isFetching: false,
+    };
+  case GET_WINNER_ERROR:
+    return {
+      ...state,
+      isFetching: false,
+      errorMsg: payload,
+    };
+  case RESET_GAME:
+    return {
+      ...initialState,
     };
   default:
     return state;

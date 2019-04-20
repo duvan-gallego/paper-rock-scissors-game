@@ -38,7 +38,8 @@ function* getGameMovesWorker() {
 function* getWinnerWorker(payload) {
   try {
     const data = yield call(getWinnerApi, payload.payload);
-    yield put({ type: GET_WINNER_SUCCESS, payload: data.moves });
+    console.log({data});
+    yield put({ type: GET_WINNER_SUCCESS, payload: data.game });
   } catch (e) {
     yield put({ type: GET_WINNER_ERROR, payload: e });
   }
